@@ -3,9 +3,6 @@ import numpy as np
 
 np.typeDict = np.sctypeDict
 import tensorflow as tf
-import matplotlib.pyplot as plt
-from matplotlib.offsetbox import OffsetImage, AnnotationBbox
-import scipy.ndimage as nd
 
 
 class LeNet_softmax(tf.keras.Model):
