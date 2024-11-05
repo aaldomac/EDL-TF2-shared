@@ -8,4 +8,4 @@ venv
 *.pyc
 
 # IntelliJ
-.idea
+.idea/
