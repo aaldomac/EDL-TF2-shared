@@ -13,7 +13,7 @@ class LeNet_softmax(tf.keras.Model):
     LeNet model with softmax output layer.
     """
     def __init__(self, regularizer_term=0.005, name='LeNet_softmax'):
-        super(LeNet_softmax, self).__init__()
+        super(LeNet_softmax, self).__init__(name=name)
 
         self.regularizer_term = regularizer_term
         # self.name = name
@@ -66,7 +66,7 @@ class LeNet_EDL(tf.keras.Model):
     LeNet model with Evidential Deep Learning (EDL) approach.
     """
     def __init__(self, regularizer_term=0.005, K=10, name='LeNet_EDL'):
-        super(LeNet_EDL, self).__init__()
+        super(LeNet_EDL, self).__init__(name=name)
 
         self.K = K
         self.regularizer_term = regularizer_term

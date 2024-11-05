@@ -111,7 +111,7 @@ class EDL_mean_ev_fail(tf.keras.metrics.Metric):
 
         # Update evidence metrics
         total_evidence = tf.reduce_sum(evidence, axis=1, keepdims=True)
-        self.ev_fail.assign_add(tf.reduce_sum(total_evidence * tf.abs((1 - match) + 1e-20)))  # shape=()
+        self.ev_fail.assign_add(tf.reduce_sum(total_evidence * tf.abs(1 - match)))  # shape=()
 
         # Update match count for averaging
         self.total_mismatches.assign_add(tf.reduce_sum(tf.abs(1 - match) + 1e-20))

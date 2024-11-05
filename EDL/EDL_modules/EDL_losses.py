@@ -69,7 +69,7 @@ class EDLoss_Gibbs(tf.keras.losses.Loss):
     Bayes classifier or Eq. 4 (function=digamma) for a Gibbs classifier.
     """
     def __init__(self, function, logits2evidence: tf.keras.layers.Activation,
-                 annealing_step=10, name='EDLoss_PAC'):
+                 annealing_step=10, name='EDLoss_Gibbs'):
         super().__init__(name=name)
         self.function = function
         self.logits2evidence = logits2evidence

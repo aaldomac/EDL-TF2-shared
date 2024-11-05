@@ -20,6 +20,16 @@ def load_mnist():
     return (x_train, y_train), (x_test, y_test), num_classes
 
 
+def load_cifar10():
+    (x_train, y_train), (x_test, y_test) = tf.keras.datasets.cifar10.load_data()
+    x_train, x_test = x_train / 255, x_test / 255
+    y_train, y_test = tf.keras.utils.to_categorical(y_train), tf.keras.utils.to_categorical(y_test)
+
+    num_classes = y_train.shape[1]
+
+    return (x_train, y_train), (x_test, y_test), num_classes
+
+
 # Create the rotate image function
 def rotate_img(x, deg):
     return nd.rotate(x, deg, reshape=False).ravel()
